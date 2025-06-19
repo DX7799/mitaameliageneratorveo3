@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veo 3 Prompt Generator by Mita Amelia</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Menghubungkan ke File CSS Eksternal -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="gradient-bg text-gray-100">
+
+    <div class="main-container">
+        <!-- Kolom Input (Kiri) -->
+        <div id="input-column" class="p-6 md:p-8 overflow-y-auto">
+            <header class="text-center mb-8">
+                <h1 id="main-title" class="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500 mb-2">Veo 3 Prompt Generator</h1>
+                <p class="text-lg text-gray-400">Buat prompt video sinematik dengan karakter konsisten.</p>
+            </header>
+
+            <div class="space-y-6">
+                <div>
+                    <label for="judul_scane" class="label-text">1. Judul Scane</label>
+                    <input type="text" id="judul_scane" class="form-input" placeholder="Contoh: Terminal bus malam">
+                </div>
+                <div>
+                    <label for="deskripsi_karakter" class="label-text">2. Deskripsi Karakter Inti</label>
+                    <textarea id="deskripsi_karakter" class="form-textarea" placeholder="Contoh: Seorang vlogger pria muda asal Maluku berusia 27 tahun..."></textarea>
+                </div>
+                <div>
+                    <label for="detail_suara" class="label-text">3. Detail Suara Karakter</label>
+                    <textarea id="detail_suara" class="form-textarea" placeholder="Contoh: Dia berbicara dengan suara pria muda yang hangat dan penuh semangat..."></textarea>
+                </div>
+                <div>
+                    <label for="aksi_karakter" class="label-text">4. Aksi Karakter</label>
+                    <input type="text" id="aksi_karakter" class="form-input" placeholder="Contoh: berjalan di sekitar terminal bus malam...">
+                </div>
+                <div>
+                    <label for="ekspresi_karakter" class="label-text">5. Ekspresi Karakter</label>
+                    <input type="text" id="ekspresi_karakter" class="form-input" placeholder="Contoh: kagum dan antusias, sering tersenyum...">
+                </div>
+                <div>
+                    <label for="latar" class="label-text">6. Latar Tempat & Waktu</label>
+                    <textarea id="latar" class="form-textarea" placeholder="Contoh: di terminal bus antar kota malam hari..."></textarea>
+                </div>
+                <div>
+                    <label for="gerakan_kamera" class="label-text">7. Gerakan Kamera</label>
+                    <select id="gerakan_kamera" class="form-select">
+                        <option value="Static (Statis)">Static (Statis)</option>
+                        <option value="Pan Left/Right (Geser Kiri/Kanan)">Pan Left/Right (Geser Kiri/Kanan)</option>
+                        <option value="Tilt Up/Down (Miring Atas/Bawah)">Tilt Up/Down (Miring Atas/Bawah)</option>
+                        <option value="Dolly In/Out (Maju/Mundur)">Dolly In/Out (Maju/Mundur)</option>
+                        <option value="Truck Left/Right (Bergerak ke Samping Kiri/Kanan)">Truck Left/Right (Bergerak ke Samping Kiri/Kanan)</option>
+                        <option value="Zoom In/Out (Perbesar/Perkecil)">Zoom In/Out (Perbesar/Perkecil)</option>
+                        <option value="Crane Up/Down (Naik/Turun seperti derek)">Crane Up/Down (Naik/Turun seperti derek)</option>
+                        <option value="Tracking Shot (Tembakan Mengikuti)" selected>Tracking Shot (Tembakan Mengikuti)</option>
+                        <option value="Handheld (Genggam)">Handheld (Genggam)</option>
+                        <option value="3D Rotation (Rotasi 3D)">3D Rotation (Rotasi 3D)</option>
+                        <option value="Orbit (Mengorbit)">Orbit (Mengorbit)</option>
+                        <option value="Arc Shot (Tembakan Busur)">Arc Shot (Tembakan Busur)</option>
+                        <option value="Whip Pan (Geser Cepat)">Whip Pan (Geser Cepat)</option>
+                        <option value="Dutch Angle/Tilt (Sudut Miring)">Dutch Angle/Tilt (Sudut Miring)</option>
+                        <option value="Boom Shot (Tembakan Boom)">Boom Shot (Tembakan Boom)</option>
+                        <option value="Drone Shot / Aerial Shot (Tembakan Drone / Udara)">Drone Shot / Aerial Shot (Tembakan Drone / Udara)</option>
+                        <option value="Vertigo Effect / Dolly Zoom (Efek Vertigo)">Vertigo Effect / Dolly Zoom (Efek Vertigo)</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="visual_tambahan" class="label-text">8. Detail Visual Tambahan</label>
+                    <textarea id="visual_tambahan" class="form-textarea" placeholder="Pencahayaan, Gaya Video, Kualitas Visual..."></textarea>
+                </div>
+                <div>
+                    <label for="suasana" class="label-text">9. Suasana Keseluruhan</label>
+                    <input type="text" id="suasana" class="form-input" placeholder="Contoh: sibuk, ramai, hidup dan dinamis...">
+                </div>
+                <div>
+                    <label for="suara_lingkungan" class="label-text">10. Suara Lingkungan/Ambience</label>
+                    <input type="text" id="suara_lingkungan" class="form-input" placeholder="SOUND: suara mesin bus, derai hujan...">
+                </div>
+                <div>
+                    <label for="dialog_karakter" class="label-text">11. Dialog Karakter (dalam Bahasa Indonesia)</label>
+                    <textarea id="dialog_karakter" class="form-textarea" placeholder="Contoh: Tiap kota punya terminal kayak gini..."></textarea>
+                </div>
+                <div>
+                    <label for="negative_prompt" class="label-text">12. Negative Prompt</label>
+                    <textarea id="negative_prompt" class="form-textarea" placeholder="Hindari: teks di layar, subtitle, logo, distorsi..."></textarea>
+                </div>
+            </div>
+
+            <!-- Tombol Aksi -->
+            <div class="flex gap-4 mt-8">
+                <button id="generateBtn" class="btn-primary flex-1">Generate Prompt</button>
+                <button id="clearBtn" class="btn-secondary flex-1">Clear</button>
+            </div>
+        </div>
+
+        <!-- Kolom Output (Kanan) -->
+        <div id="output-column" class="p-6 md:p-8">
+            <div class="sticky-output">
+                <h2 class="text-2xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Final Prompt (English)</h2>
+                <div class="relative">
+                    <pre class="output-box"><code id="englishPrompt">Hasil prompt akan muncul di sini...</code></pre>
+                    <button id="copyBtn" class="copy-button" title="Salin Prompt">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-copy"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menghubungkan ke File JavaScript Eksternal -->
+    <script src="script.js" defer></script>
+</body>
+
+</html>

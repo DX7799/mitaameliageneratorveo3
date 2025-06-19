@@ -1,0 +1,153 @@
+/* File: style.css */
+
+
+/* CSS untuk Veo 3 Prompt Generator */
+
+
+/* Gaya dasar */
+
+body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* Latar belakang */
+
+.gradient-bg {
+    background-color: #0a0a0a;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.1) 1px, transparent 0);
+    background-size: 2rem 2rem;
+}
+
+
+/* Struktur utama dua kolom */
+
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Default 1 kolom untuk mobile */
+    min-height: 100vh;
+}
+
+@media (min-width: 768px) {
+    /* 2 kolom untuk tablet ke atas */
+    .main-container {
+        grid-template-columns: 3fr 2fr;
+        /* Rasio kolom kiri dan kanan */
+    }
+}
+
+#input-column {
+    border-right: 1px solid #1f2937;
+}
+
+#output-column .sticky-output {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 2rem;
+    /* Jarak dari atas */
+    height: calc(100vh - 4rem);
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Elemen Form */
+
+.form-input,
+.form-textarea,
+.form-select {
+    background-color: #1f2937;
+    border: 1px solid #4b5563;
+    color: #f3f4f6;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.4);
+}
+
+.form-textarea {
+    min-height: 120px;
+}
+
+.label-text {
+    color: #d1d5db;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+
+/* Tombol Aksi */
+
+.btn-primary,
+.btn-secondary {
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(to right, #3b82f6, #6366f1);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+.btn-secondary {
+    background-color: #374151;
+    /* bg-gray-700 */
+    border: 1px solid #4b5563;
+}
+
+.btn-secondary:hover {
+    background-color: #4b5563;
+}
+
+
+/* Kotak Output */
+
+.output-box {
+    background-color: #111827;
+    border: 1px solid #4b5563;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    color: #e5e7eb;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    flex-grow: 1;
+    /* Membuatnya mengisi ruang yang tersedia */
+    overflow-y: auto;
+}
+
+.copy-button {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background-color: #374151;
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.copy-button:hover {
+    background-color: #4b5563;
+}
